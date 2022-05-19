@@ -55,11 +55,11 @@ class ListaPessoas(Resource):
         dados = request.json
         pessoa = Pessoas(nome=dados['nome'], idade=dados['idade'])
         pessoa.save()
-        response = [
+        response = {
             'id':pessoa.id,
             'nome':pessoa.nome,
             'idade':pessoa.idade
-        ]
+        }
         return response
     
 class ListaAtividades(Resource):
